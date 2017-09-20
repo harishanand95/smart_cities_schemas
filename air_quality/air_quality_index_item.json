@@ -1,0 +1,175 @@
+{
+    "type": "object", 
+    "properties": {
+        "refCatalogueSchemaRelease": {
+            "type": "string"
+        }, 
+        "data_schema": {
+            "additionalProperties": true, 
+            "type": "object", 
+            "properties": {
+                "city": {
+                    "units": "dimensionless", 
+                    "accessModifier": "protected", 
+                    "type": "string", 
+                    "description": "Name of the city where Air Quality Index is taken", 
+                    "permissions": "read-write"
+                }, 
+                "temperature": {
+                    "units": "Celsius", 
+                    "describes": "Temperature in the area", 
+                    "type": "number", 
+                    "accessModifier": "protected"
+                }, 
+                "humidity": {
+                    "units": "percent", 
+                    "describes": "Humidity levels", 
+                    "type": "number", 
+                    "accessModifier": "protected"
+                }, 
+                "ozone": {
+                    "units": "\u00b5g/m3", 
+                    "describes": "Ozone levels", 
+                    "type": "number", 
+                    "accessModifier": "protected"
+                }, 
+                "pressure": {
+                    "units": "hPa", 
+                    "describes": "Pressure levels", 
+                    "type": "number", 
+                    "accessModifier": "protected"
+                }, 
+                "time": {
+                    "units": "YYYY-MM-DD HH:MM:SS", 
+                    "describes": "Time when data was taken", 
+                    "type": "string", 
+                    "accessModifier": "protected"
+                }, 
+                "geo": {
+                    "minItems": 2, 
+                    "items": {
+                        "type": "number"
+                    }, 
+                    "describes": "2 element array having latitude and longitude", 
+                    "type": "array"
+                }
+            }
+        }, 
+        "accessMechanism": {
+            "type": "object", 
+            "properties": {
+                "additionalResourceInfo": {
+                    "type": "object", 
+                    "properties": {
+                        "describes": {
+                            "type": "string"
+                        }, 
+                        "value": {
+                            "type": "string", 
+                            "format": "uri"
+                        }
+                    }
+                }, 
+                "requestAccessSite": {
+                    "type": "object", 
+                    "properties": {
+                        "describes": {
+                            "type": "string"
+                        }, 
+                        "value": {
+                            "type": "string", 
+                            "format": "uri"
+                        }
+                    }
+                }, 
+                "accessEndPoint": {
+                    "type": "object", 
+                    "properties": {
+                        "describes": {
+                            "type": "string"
+                        }, 
+                        "value": {
+                            "type": "string", 
+                            "format": "uri"
+                        }
+                    }
+                }, 
+                "subscriptionEndPoint": {
+                    "type": "object", 
+                    "properties": {
+                        "describes": {
+                            "type": "string"
+                        }, 
+                        "value": {
+                            "type": "string", 
+                            "format": "uri"
+                        }
+                    }
+                }, 
+                "updateEndPoint": {
+                    "type": "object", 
+                    "properties": {
+                        "describes": {
+                            "type": "string"
+                        }, 
+                        "value": {
+                            "type": "string", 
+                            "format": "uri"
+                        }
+                    }
+                }, 
+                "resourceAPIInfo": {
+                    "type": "object", 
+                    "properties": {
+                        "describes": {
+                            "type": "string"
+                        }, 
+                        "value": {
+                            "type": "string", 
+                            "format": "uri"
+                        }
+                    }
+                }
+            }
+        }, 
+        "tags": {
+            "type": "array"
+        }, 
+        "refCatalogueSchema": {
+            "type": "string"
+        }, 
+        "provider": {
+            "required": [
+                "name"
+            ], 
+            "type": "object", 
+            "properties": {
+                "website": {
+                    "type": "string", 
+                    "format": "uri"
+                }, 
+                "name": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "owner": {
+            "required": [
+                "name"
+            ], 
+            "type": "object", 
+            "properties": {
+                "website": {
+                    "type": "string", 
+                    "format": "uri"
+                }, 
+                "name": {
+                    "type": "string"
+                }
+            }
+        }, 
+        "id": {
+            "type": "string"
+        }
+    }
+}
